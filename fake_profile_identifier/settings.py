@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-4ej*g2f)+#=f18e^i_gyq(is)%&vn8ou^_3tf1m^23zsz$88ac
 DEBUG = True
 '''
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-4ej*g2f)+#=f18e^i_gyq(is)%&vn8ou^_3tf1m^23zsz$88ad')  # Replace with env var end d->c
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-4ej*g2f)+#=f18e^i_gyq(is)%&vn8ou^_3tf1m^23zsz$88ac')  # Replace with env var end d->c
 
 
 ALLOWED_HOSTS = ['*']  # Allow all hosts for development; adjust for production
