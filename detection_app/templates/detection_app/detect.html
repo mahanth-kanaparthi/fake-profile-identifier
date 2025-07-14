@@ -1,0 +1,65 @@
+{% extends 'detection_app/base.html' %}
+
+{% block title %}Detect Fake Profile{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+        <h2 class="mb-4 text-center">Fake Profile Detection</h2>
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" step="any" name="username" class="form-control" placeholder="e.g. sathu123" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Followers</label>
+                <input type="number" step="any" name="followers" class="form-control" placeholder="e.g. 2500" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Following</label>
+                <input type="number" step="any" name="following" class="form-control" placeholder="e.g. 300" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Posts</label>
+                <input type="number" step="any" name="posts" class="form-control" placeholder="e.g. 45" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Bio Length (characters)</label>
+                <input type="number" step="any" name="bio_length" class="form-control" placeholder="e.g. 120" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Profile Picture Present?</label>
+                <select name="profile_pic" class="form-select" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Account Age (in days)</label>
+                <input type="number" step="any" name="account_age_days" class="form-control" placeholder="e.g. 2138" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Engagement Ratio</label>
+                <input type="number" step="any" name="engagement_ratio" class="form-control" placeholder="e.g. 0.5566" required>
+            </div>
+
+            <button type="submit" class="btn btn-danger w-100 btn-danger-custom">Detect Fake Profile</button>
+        </form>
+
+        {% if prediction %}
+        <div class="alert {% if prediction == 'Fake Profile' %}alert-danger{% else %}alert-success{% endif %} mt-4 text-center">
+            <h5>Detection Result: {{ prediction }}</h5>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

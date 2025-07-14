@@ -1,0 +1,7 @@
+django
+xgboost
+numpy
+scikit-learn
+mysqlclient
+gunicorn
+

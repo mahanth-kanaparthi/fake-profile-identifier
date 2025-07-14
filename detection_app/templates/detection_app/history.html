@@ -1,0 +1,41 @@
+{% extends 'detection_app/base.html' %}
+
+{% block title %}Detection History{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Your Detection History</h2>
+
+    {% if records %}
+        <div class="row">
+            {% for record in records %}
+                <div class="col-md-4 mb-4 result-card">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Result: 
+                                {% if record.result == 'Fake Profile' %}
+                                    <span class="text-danger">{{ record.result }}</span>
+                                {% else %}
+                                    <span class="text-success">{{ record.result }}</span>
+                                {% endif %}
+                            </h5>
+                            <p><strong>Username:</strong> {{ record.username }}</p>
+                            <p><strong>Followers:</strong> {{ record.followers }}</p>
+                            <p><strong>Following:</strong> {{ record.following }}</p>
+                            <p><strong>Posts:</strong> {{ record.posts }}</p>
+                            <p><strong>Bio Length:</strong> {{ record.bio_length }}</p>
+                            <p><strong>Profile Pic:</strong> {{ record.profile_pic }}</p>
+                            <p><strong>Account Age (days):</strong> {{ record.account_age_days }}</p>
+                            <p><strong>Engagement Ratio:</strong> {{ record.engagement_ratio }}</p>
+                            <small class="text-muted">Detected on {{ record.detected_at }}</small>
+                        </div>
+                    </div>
+                </div>
+             
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center">No detections made yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

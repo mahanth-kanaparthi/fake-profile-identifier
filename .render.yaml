@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: fake-profile-identifier
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+    startCommand: gunicorn fake_profile_identifier.wsgi
+    envVars:
+      - key: DEBUG
+        value: False
+      - key: SECRET_KEY
+        value: django-insecure-4ej*g2f)+#=f18e^i_gyq(is)%&vn8ou^_3tf1m^23zsz$88ac

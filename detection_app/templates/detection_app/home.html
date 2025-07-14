@@ -1,0 +1,32 @@
+{% extends 'detection_app/base.html' %}
+
+{% block title %}Home - Fake Profile Identifier{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="display-4 mb-4">Fake Profile Identifier</h1>
+    <p class="lead">Detect and report fake social media profiles before they cause harm.</p>
+
+    <div class="mt-5">
+        <h3>What Are Fake Profiles?</h3>
+        <p>
+            Fake profiles are fraudulent online accounts impersonating real people or organizations. 
+            They are created for malicious activities like scams, misinformation, trolling, phishing, or identity theft.
+        </p>
+
+        <h3>Impact on Social Life</h3>
+        <p>
+            Fake profiles erode trust in online communities, spread false information, harass individuals, 
+            and damage reputations. Their unchecked growth threatens digital wellbeing.
+        </p>
+
+        <h3>Why Detect Them?</h3>
+        <p>
+            Detecting and reporting fake profiles helps maintain a safer social media environment. 
+            It protects people from scams, defamation, and cybercrimes, and ensures accountability.
+        </p>
+
+        <a href="{% url 'login' %}" class="btn btn-primary btn-lg mt-4 btn-custom">Login to Detect a Fake Profile</a>
+    </div>
+</div>
+{% endblock %}

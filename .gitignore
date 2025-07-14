@@ -1,0 +1,27 @@
+# Python
+*.pyc
+__pycache__/
+
+# Virtual Environment
+.env/
+
+# Django Static Files
+staticfiles/
+
+# SQLite DB
+*.sqlite3
+
+# VSCode or PyCharm IDEs
+.vscode/
+.idea/
+
+# Environment files
+.env.local
+.env.example
+
+# Jupyter Notebooks Checkpoints
+.ipynb_checkpoints/
+
+# OS-specific
+.DS_Store
+Thumbs.db
